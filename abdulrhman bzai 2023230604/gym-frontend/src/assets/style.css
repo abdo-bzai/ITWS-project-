@@ -1,0 +1,185 @@
+
+:root {
+    --plate-blue: #1f4fd1;
+    --plate-green: #1c8c4e;
+    --plate-yellow: #e0a800;
+    --plate-red: #c8283c;
+    --iron: #232a36;
+    --floor: #eef0f3;
+
+    --bs-body-bg: var(--floor);
+    --bs-body-color: #1d2330;
+    --bs-body-font-family: 'Barlow', system-ui, sans-serif;
+    --bs-primary: var(--plate-blue);
+    --bs-primary-rgb: 31, 79, 209;
+    --bs-link-color: var(--plate-blue);
+    --bs-link-color-rgb: 31, 79, 209;
+    --bs-border-radius: .375rem;
+}
+
+h1, h2, h3, h4, h5, .navbar-brand {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 700;
+    letter-spacing: .01em;
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--plate-blue);
+    --bs-btn-border-color: var(--plate-blue);
+    --bs-btn-hover-bg: #1a43b3;
+    --bs-btn-hover-border-color: #1a43b3;
+    --bs-btn-active-bg: #163a9a;
+}
+
+.navbar-gym {
+    background: var(--iron);
+    border-bottom: 4px solid var(--plate-blue);
+}
+
+.navbar-gym .navbar-brand {
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.page-title {
+    font-size: 2.25rem;
+    line-height: 1.1;
+    margin-bottom: .25rem;
+}
+
+.page-lead {
+    color: #5b6475;
+    max-width: 60ch;
+}
+
+.card {
+    border: 1px solid #dde1e7;
+}
+
+.table > :not(caption) > * > * {
+    padding: .7rem .75rem;
+}
+
+.table th {
+    color: #5b6475;
+    font-weight: 600;
+    font-size: .9rem;
+}
+
+/* Plan badges: the longer the plan, the heavier the plate */
+.plate {
+    display: inline-block;
+    padding: .2rem .6rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: .85rem;
+    color: #fff;
+    white-space: nowrap;
+}
+.plate-1 { background: var(--plate-green); }
+.plate-3 { background: var(--plate-yellow); color: #231a00; }
+.plate-6 { background: var(--plate-blue); }
+.plate-12 { background: var(--plate-red); }
+.plate-other { background: var(--iron); }
+
+/* Membership status: a dot + text, so it doesn't compete with the plan badge */
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    font-weight: 600;
+    font-size: .9rem;
+    white-space: nowrap;
+}
+.status::before {
+    content: '';
+    width: .6rem;
+    height: .6rem;
+    border-radius: 50%;
+    background: currentColor;
+}
+.status-active { color: var(--plate-green); }
+.status-soon { color: #a87a00; }
+.status-expired { color: var(--plate-red); }
+
+.summary-box {
+    background: var(--floor);
+    border-radius: var(--bs-border-radius);
+    padding: .9rem 1rem;
+}
+.summary-box dl {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: .3rem 1rem;
+    margin: 0;
+}
+.summary-box dd { margin: 0; text-align: right; }
+.summary-box .total { font-weight: 700; font-size: 1.1rem; border-top: 1px solid #d3d8df; padding-top: .4rem; }
+
+.crud-wrapper {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Home page roster: one block per trainer with their members */
+.roster {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.roster-trainer {
+    background: #fff;
+    border: 1px solid #dde1e7;
+    border-top: 6px solid var(--iron);
+    border-radius: var(--bs-border-radius);
+    padding: 1rem 1.1rem;
+}
+
+.roster-trainer h3 {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.roster-alone {
+    border-top-color: #9aa3b2;
+    border-style: dashed;
+    border-top-style: solid;
+}
+
+.roster-trainer .specialty {
+    color: #5b6475;
+    font-size: .95rem;
+}
+
+.roster-trainer ul {
+    list-style: none;
+    padding: 0;
+    margin: .75rem 0 0;
+}
+
+.roster-trainer li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+    padding: .4rem 0;
+    border-top: 1px solid #eef0f3;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #5b6475;
+}
+
+footer {
+    color: #7a8394;
+    padding: 1.5rem 0;
+}
+
+.btn:focus-visible, a:focus-visible, .form-control:focus, .form-select:focus {
+    outline: 3px solid rgba(31, 79, 209, .45);
+    outline-offset: 2px;
+}
